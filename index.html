@@ -3,169 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje Portfolio Montażowe</title>
+    <title>Portfolio Montażowe</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-        header {
-            background: #000;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
+            background-color: black;
             color: yellow;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffc107;
-        }
-        .gallery {
-            position: relative;
-            max-width: 800px;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .portfolio-items {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .portfolio-item {
-            min-width: 100%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background: white;
+            font-family: Arial, sans-serif;
             text-align: center;
-            padding: 15px;
-            border-radius: 8px;
         }
-        .portfolio-item video {
-            max-width: 100%;
-            border-radius: 8px;
+        .icon {
+            width: 50px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        iframe {
+            width: 80%;
+            height: 400px;
+            border: none;
         }
         .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: black;
-            color: white;
-            border: none;
-            padding: 10px;
             cursor: pointer;
-            z-index: 10;
-            border-radius: 50%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s;
+            font-size: 30px;
+            margin: 20px;
+            color: yellow;
         }
-        .arrow-left {
-            left: 10px;
-        }
-        .arrow-right {
-            right: 10px;
-        }
-        .arrow:hover {
-            background-color: #444;
-        }
-        footer {
-            text-align: left; /* Zmiana na lewo */
-            margin-top: 40px;
-            padding: 20px;
-            background: #4a69bd;
-            color: white;
+        .creator {
+            font-size: 20px;
+            margin: 10px 0;
         }
         .contact {
-            padding: 20px;
-            background: #000000;
-            text-align: left; /* Zmiana na lewo */
+            margin-top: 40px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Moje Portfolio Montażowe</h1>
-    <nav>
-        <a href="#portfolio">Projekty</a>
-        <a href="#contact">Kontakt</a>
-    </nav>
-</header>
-
-<div class="gallery" id="portfolio">
-    <button class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</button>
-    <div class="portfolio-items">
-        <div class="portfolio-item">
-            <video src="https://youtu.be/kMOPUB3FQQA?si=hjn824WzsBj8nks6" controls></video>
-            <p>Jak zdobyłem TEN PRZEDMIOT na ANARCHIA.GG (mocny</p>
-        </div>
-        <div class="portfolio-item">
-            <video src="film2.mp4" controls></video>
-            <p>Film 2</p>
-        </div>
-        <div class="portfolio-item">
-            <video src="film3.mp4" controls></video>
-            <p>Film 3</p>
-        </div>
-        <div class="portfolio-item">
-            <video src="film4.mp4" controls></video>
-            <p>Film 4</p>
-        </div>
-        <div class="portfolio-item">
-            <video src="film5.mp4" controls></video>
-            <p>Film 5</p>
-        </div>
-        <div class="portfolio-item">
-            <video src="film6.mp4" controls></video>
-            <p>Film 6</p>
-        </div>
+    <h1>Portfolio Montażowe</h1>
+    
+    <div>
+        <a href="https://discord.gg/E8SyN4JZ" target="_blank">
+            <img src="https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/15/Discord_logo.webp/213px-Discord_logo.webp.png" alt="Discord" class="icon">
+        </a>
+        <a href="https://www.youtube.com/@Wikak__/videos" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="icon">
+        </a>
     </div>
-    <button class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</button>
-</div>
 
-<footer>
-    <div class="contact" id="contact">
-        <h2>Kontakt</h2>
-        <p>Email: biznes.wikaczek@gmail.com</p>
-        <p>Discord: witkopo_</p>
+    <h2>Moje Portfolio</h2>
+    
+    <div>
+        <span class="arrow" id="prev">&#10094;</span>
+        <span class="arrow" id="next">&#10095;</span>
     </div>
-</footer>
+    
+    <div class="creator" id="videoCreator">Twórca: [Imię i Nazwisko]</div>
+    <iframe id="youtubePlayer" src="" allowfullscreen></iframe>
+    
+    <script>
+        const videos = [
+            { id: 'zbpMC7rDGcQ', creator: 'Zombiaczek   od 01:04' },
+            { id: 'kMOPUB3FQQA', creator: 'XZY Twórca Minecraft' },
+            { id: '-yTJdyzl0ow', creator: 'Cpotworek' }
+        ]; // Tablica z obiektami filmów
+        let currentVideoIndex = 0; // Indeks aktualnie odtwarzanego filmu
 
-<script>
-    let currentIndex = 0;
-
-    function moveSlide(direction) {
-        const items = document.querySelectorAll('.portfolio-item');
-        const totalItems = items.length;
-
-        currentIndex = (currentIndex + direction + totalItems) % totalItems;
-        const offset = -currentIndex * 100; // Oblicz offset na podstawie indeksu
-        document.querySelector('.portfolio-items').style.transform = `translateX(${offset}%)`;
-    }
-
-    // Obsługa klawiszy strzałek
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowLeft') {
-            moveSlide(-1);
-        } else if (event.key === 'ArrowRight') {
-            moveSlide(1);
+        function loadVideo(video) {
+            const player = document.getElementById('youtubePlayer');
+            player.src = `https://www.youtube.com/embed/${video.id}?autoplay=1`;
+            document.getElementById('videoCreator').innerText = `Twórca: ${video.creator}`;
         }
-    });
-</script>
 
+        function showVideo(index) {
+            if (index >= 0 && index < videos.length) {
+                currentVideoIndex = index;
+                loadVideo(videos[currentVideoIndex]);
+            }
+        }
+
+        document.getElementById('prev').onclick = function() {
+            if (currentVideoIndex > 0) {
+                showVideo(currentVideoIndex - 1);
+            }
+        };
+
+        document.getElementById('next').onclick = function() {
+            if (currentVideoIndex < videos.length - 1) {
+                showVideo(currentVideoIndex + 1);
+            }
+        };
+
+        // Przykład użycia: załaduj pierwszy film z tablicy
+        loadVideo(videos[currentVideoIndex]);
+    </script>
+
+    <div class="contact">
+        <h3>Dane kontaktowe</h3>
+        <p>Email: biznes.wikaczek@gmail.com</p>
+        <p>Discord: witkopo_ </p>
+    </div>
+    
 </body>
 </html>
